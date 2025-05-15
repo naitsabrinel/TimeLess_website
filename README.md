@@ -2,7 +2,6 @@
 
 # TIMELESS est une boutique en ligne de montres
 
-![Logo Timeless](assets/images/logo.png)
 
 ## 📌 Aperçu
 Site de vente de montres avec :
