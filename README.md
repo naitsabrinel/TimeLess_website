@@ -1,8 +1,7 @@
 
 # TIMELESS est une boutique en ligne de montres
 
-![Accueil](![image](https://github.com/user-attachments/assets/8d71c568-c9d6-4f81-b087-07ab6042a4f1)
-)
+![Accueil](https://github.com/user-attachments/assets/8d71c568-c9d6-4f81-b087-07ab6042a4f1)
 
 ## 📌 Aperçu
 Site de vente de montres avec :
