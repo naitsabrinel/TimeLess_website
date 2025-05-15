@@ -1,0 +1,56 @@
+Le mini projet contient 2 parties.
+
+Rappel des principaux points sur lesquels vous devez vous concentrer:
+
+Un site Web e-commerce proposant la vente d'Item (à vous de choisir le type d'item).
+Une Page principale de la boutique présentant des items mis en vente.
+Chaque item contient une description et un prix.
+La possibilité de faire une recherche (filtre selon plusieurs critères).
+La possibilité de consulter la page détaillée d'un item.
+Les items doivent provenir d'une base de données.
+La possibilité à l'utilisateur de se connecter/déconnecter.
+Ajouter/enlever des items à son panier, et de consulter l'état de son panier.
+L'utilisation des cookies et des sessions.
+La possibilité à l'administrateur de se connecter pour ajouter des items.
+
+
+Concernant la partie base de données, votre travail consistera à :
+Décrire le schéma relationnel de la base de données et définir les relations entre les tables.
+Écrire une procédure stockée qui affiche les détails d’une commande pour un client ainsi que le total à payer.
+
+*Proposer une procédure stockée qui permet de finaliser une commande et de vider le panier une fois la commande validée.
+
+*Écrire une procédure qui permet d'afficher l'historique des commandes d'un client.
+
+*Écrire un trigger qui met automatiquement à jour le stock d’un item après la validation d’une commande.**
+
+*Écrire un trigger qui permet de restaurer le stock après l'annulation d'une commande
+
+Écrire un trigger qui empêche l’insertion d’une commande si la quantité demandée dépasse le stock disponible.
+
+Écrire un trigger qui permet de garder trace des commandes annulées dans une table historique qu'il faudra créer. 
+
+Mettre en avant l'utilisation de ces procédures et triggers en les intégrant dans les pages web du site.
+
+
+
+
+Écrire une procédure stockée qui affiche les détails d’une commande pour un client ainsi que le total à payer.
+
+GetCompleteOrderDetails
+
+Proposer une procédure stockée qui permet de finaliser une commande et de vider le panier une fois la commande validée.
+
+FinaliserCommandeEtViderPanier
+
+
+Écrire un trigger qui empêche l’insertion d’une commande si la quantité demandée dépasse le stock disponible.
+
+ before_commande_detail_insert
+
+Écrire un trigger qui permet de garder trace des commandes annulées dans une table historique qu'il faudra créer. 
+
+after_commande_cancelled
+
+Écrire une procédure qui permet d'afficher l'historique des commandes d'un client.
+GetOrderHistory
