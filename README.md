@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b5ff3c81-34dc-4cf3-8f4b-35ec9f76e69d)
+
 # TIMELESS est une boutique en ligne de montres
 
 ![Accueil](https://github.com/user-attachments/assets/8d71c568-c9d6-4f81-b087-07ab6042a4f1)
