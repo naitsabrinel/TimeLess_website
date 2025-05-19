@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                  transferCartFromCookies(0);
                 
-                header('Location: admin_add_watch.php');
+                header('Location: admin_dashboard.php');
                 exit;
             }
             
