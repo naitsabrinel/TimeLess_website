@@ -160,7 +160,7 @@ require 'includes/db.php';
         <div class="menu-card">
             <div class="menu-icon"><i class="fas fa-clock"></i></div>
             <h3 class="menu-title">Gestion des Montres</h3>
-            <p class="menu-desc">Ajouter,Afficher des montres</p>
+            <p class="menu-desc">Ajouter,Afficher des montres,Modifier le stock</p>
             <a href="admin_add_watch.php" class="menu-btn">Ajouter</a>
             <a href="admin_watches.php" class="menu-btn">Accéder</a>
         </div>
