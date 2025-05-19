@@ -72,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      men's watches, women's watches, fashion watches, timeless watches,Sabrinel Naitcherif">
     <meta name="author" content="Sabrinel Naitcherif">
     <link rel="stylesheet" href="Style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -169,22 +170,56 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+         .back-btn {
+            background-color: #896045;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .back-btn:hover {
+            background-color: #6d4b30;
+        }
+            .admin-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+         .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
     </style>
 </head>
 <body>
 
 <header>
-    <h2>ADMIN - Ajout d'une Montre</h2>
+    <h2>TIMELESS ADMIN</h2>
     <nav>
         <ul>
-            <li><a href="logout.php" style="color:inherit; text-decoration:none;">Déconnexion</a></li>
+            <li><a href="admin_dashboard.php" style="color:inherit; text-decoration:none;">TABLEAU DE BORD</a></li>
+            <li><a href="logout.php" style="color:inherit; text-decoration:none;">DÉCONNEXION</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="container">
-    <h1>Ajouter une nouvelle montre</h1>
-
+<div class="admin-container">
+   <div class="admin-header">
+        <h1 >Ajouter une nouvelle montre</h1>
+        <a href="admin_dashboard.php" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au tableau de bord</a>
+    </div>
+    
     <?php if ($success): ?>
             <div class="success"><?= htmlspecialchars($success) ?></div>
         <?php endif; ?>
