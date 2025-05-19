@@ -2,7 +2,27 @@
 session_start();
 require 'includes/db.php';
 
-// Récupération des montres
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_stock'])) {
+    $idmontre = $_POST['idmontre'];
+    $new_stock = (int)$_POST['new_stock'];
+    
+    try {
+        $sql = "UPDATE MONTRE SET quantiteStock = ? WHERE idmontre = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$new_stock, $idmontre]);
+        
+        $_SESSION['success_message'] = "Stock mis à jour avec succès!";
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    } catch (PDOException $e) {
+        $_SESSION['error_message'] = "Erreur lors de la mise à jour du stock: " . $e->getMessage();
+    }
+}
+
+$success_message = $_SESSION['success_message'] ?? '';
+$error_message = $_SESSION['error_message'] ?? '';
+unset($_SESSION['success_message'], $_SESSION['error_message']);
+
 $sql = "SELECT * FROM MONTRE ORDER BY date_ajout DESC";
 $stmt = $pdo->query($sql);
 $montres = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,6 +76,7 @@ $montres = $stmt->fetchAll(PDO::FETCH_ASSOC);
             text-decoration: none;
             font-size: 14px;
         }
+        
         
         .back-btn:hover {
             background-color: #6d4b30;
@@ -232,6 +253,7 @@ $montres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <th>Catégorie</th>
                 <th>Sexe</th>
                 <th>Stock</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -245,6 +267,16 @@ $montres = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($montre['categorie']) ?></td>
                     <td><?= htmlspecialchars($montre['sexe']) ?></td>
                     <td><?= htmlspecialchars($montre['quantiteStock']) ?></td>
+                    <td>
+                        <form class="stock-form" method="POST">
+                            <input type="hidden" name="idmontre" value="<?= $montre['idmontre'] ?>">
+                            <input type="number" name="new_stock" class="stock-input" 
+                                   value="<?= $montre['quantiteStock'] ?>" min="0">
+                            <button type="submit" name="update_stock" class="update-btn">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
